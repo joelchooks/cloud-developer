@@ -1,4 +1,4 @@
-import express, { Router, Request, Response } from 'express';
+import express from 'express';
 // import bodyParser from 'body-parser'; deprecated
 const bodyParser = require('body-parser')
 
@@ -18,7 +18,7 @@ import { Car, cars as cars_list } from './cars';
   app.use(express.urlencoded({ extended: true })) //for requests from forms-like data
 
   // Root URI call
-  app.get( "/", ( req: Request, res: Response ) => {
+  app.get( "/", ( req, res ) => {
     res.status(200).send("Welcome to the Cloud!");
   } );
 
@@ -26,7 +26,7 @@ import { Car, cars as cars_list } from './cars';
   // to demonstrate routing parameters
   // > try it {{host}}/persons/:the_name
   app.get( "/persons/:name", 
-    ( req: Request, res: Response ) => {
+    ( req, res ) => {
       let { name } = req.params;
 
       if ( !name ) {
@@ -40,7 +40,7 @@ import { Car, cars as cars_list } from './cars';
 
   // Get a greeting to a specific person to demonstrate req.query
   // > try it {{host}}/persons?name=the_name
-  app.get( "/persons/", ( req: Request, res: Response ) => {
+  app.get( "/persons/", ( req, res ) => {
     let { name } = req.query;
 
     if ( !name ) {
@@ -57,7 +57,7 @@ import { Car, cars as cars_list } from './cars';
   // > try it by posting {"name": "the_name" } as 
   // an application/json body to {{host}}/persons
   app.post( "/persons", 
-    async ( req: Request, res: Response ) => {
+    async ( req, res ) => {
 
       const { name } = req.body;
 
