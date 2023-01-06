@@ -9,6 +9,9 @@ The project is split into three parts:
 
 ## Deployment
 
+The link to the Github repository of this project is: (https://github.com/joelchooks/cloud-developer/tree/master/course-02/project/image-filter-starter-code)
+
+
 The deployed application for the final project can be found at (http://udagram-nwaoma-app-prod-dev.us-east-1.elasticbeanstalk.com)
 
 A sample query parameter to try the application out would be:(/filteredimage?image_url=https://images.pexels.com/photos/4629485/pexels-photo-4629485.jpeg)
